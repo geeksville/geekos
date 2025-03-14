@@ -1,5 +1,7 @@
 FROM ghcr.io/ublue-os/bazzite:testing
 
+LABEL org.opencontainers.image.description="a private bazzite fork you probably don't want"
+
 ## Other possible base images include:
 # FROM ghcr.io/ublue-os/bazzite:latest
 # FROM ghcr.io/ublue-os/bluefin-nvidia:stable
