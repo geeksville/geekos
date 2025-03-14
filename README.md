@@ -1,4 +1,7 @@
-# image-template
+# geekos (a private version of Fedora Silver-blue/Bazzite)
+
+You probably don't want this slightly repackaged and modified Bazzite.  This
+is currently use for my own personal use on a development machine.
 
 # Purpose
 
