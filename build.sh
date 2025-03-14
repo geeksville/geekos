@@ -12,6 +12,10 @@ set -ouex pipefail
 # this installs a package from fedora repos
 dnf5 install -y tmux 
 
+# kevinh hack so that missing dependencies for hhd-dev/hhd can install with just the install.sh script
+# root cause is that the adjustor python package needs libfuse fuse.h
+dnf5 install -y fuse-devel
+
 # Use a COPR Example:
 #
 # dnf5 -y copr enable ublue-os/staging
