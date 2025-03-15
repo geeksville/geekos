@@ -16,12 +16,16 @@ set -ouex pipefail
 # root cause is that the adjustor python package needs libfuse fuse.h
 dnf5 install -y fuse-devel
 
-# Use a COPR Example:
-#
-# dnf5 -y copr enable ublue-os/staging
-# dnf5 -y install package
+# kevinh Pull in the kernel headers for whatever kernel this image was built with
+dnf install -y kernel-devel
+
+# Get the mesa nightly as a COPR
+dnf5 -y copr enable xxmitsu/mesa-git
+dnf5 -y update --refresh
+dnf5 -y upgrade mesa\* libglvnd\* --allowerasing
+
 # Disable COPRs so they don't end up enabled on the final image:
-# dnf5 -y copr disable ublue-os/staging
+dnf5 -y copr disable xxmitsu/mesa-git
 
 #### Example for enabling a System Unit File
 
