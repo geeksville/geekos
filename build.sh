@@ -19,13 +19,14 @@ dnf5 install -y fuse-devel
 # kevinh Pull in the kernel headers for whatever kernel this image was built with
 dnf install -y kernel-devel
 
+# DOESN'T WORK
 # Get the mesa nightly as a COPR
-dnf5 -y copr enable xxmitsu/mesa-git
-dnf5 -y update --refresh
-dnf5 -y upgrade mesa\* libglvnd\* --allowerasing
+#dnf5 -y copr enable xxmitsu/mesa-git
+#dnf5 -y update --refresh
+#dnf5 -y upgrade mesa\* libglvnd\* --allowerasing
 
 # Disable COPRs so they don't end up enabled on the final image:
-dnf5 -y copr disable xxmitsu/mesa-git
+#dnf5 -y copr disable xxmitsu/mesa-git
 
 #### Example for enabling a System Unit File
 
